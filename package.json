@@ -1,0 +1,17 @@
+{
+  "name": "ip-location-extractor",
+  "version": "1.1.0",
+  "description": "The program can be used to fetch the details of all the IP addess in your server logs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "IP-Locator"
+  ],
+  "author": "Mayank Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  }
+}
