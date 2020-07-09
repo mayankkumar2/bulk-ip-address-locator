@@ -4,8 +4,7 @@ const fs = require('fs');
 const fetchIPDetails = async (ip) => {
     try {
         let data = await fetch("http://ip-api.com/json/" + ip);
-        let body = await data.text()
-        body = JSON.parse(body)
+        body = await data.json()
         return {
             error: false,
             data: body,
@@ -27,11 +26,6 @@ const readIPfile = () => {
     }
 };
 
-async function sleep(millis) {
-    return new Promise(resolve => setTimeout(resolve, millis));
-}
-
-
 let listOfIPs = readIPfile();
 
 (async () => {
@@ -46,7 +40,6 @@ let listOfIPs = readIPfile();
         } else {
             let data = await fetchIPDetails(value);
             if (data.error) {
-                //console.log(data.e)
                 console.log(`Error while fetching details for ${value}`)
             } else {
                 let ipDetails = data.data;
